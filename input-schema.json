@@ -1,0 +1,103 @@
+{
+  "title": "Texas Legislative FTP Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "ftpServer": {
+      "title": "FTP Server",
+      "type": "string",
+      "description": "The FTP server to connect to",
+      "default": "ftp.legis.state.tx.us",
+      "editor": "textfield"
+    },
+    "username": {
+      "title": "Username",
+      "type": "string",
+      "description": "FTP username (use 'anonymous' for public FTP servers)",
+      "default": "anonymous",
+      "editor": "textfield"
+    },
+    "password": {
+      "title": "Password",
+      "type": "string",
+      "description": "FTP password (leave empty for anonymous login)",
+      "default": "",
+      "editor": "textfield"
+    },
+    "basePath": {
+      "title": "Base Path",
+      "type": "string",
+      "description": "The starting directory path on the FTP server",
+      "default": "/",
+      "editor": "textfield"
+    },
+    "fileExtensions": {
+      "title": "File Extensions",
+      "type": "array",
+      "description": "List of file extensions to process",
+      "default": [".html", ".pdf", ".doc", ".txt"],
+      "editor": "stringList"
+    },
+    "maxDepth": {
+      "title": "Maximum Depth",
+      "type": "integer",
+      "description": "Maximum directory depth to traverse",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 10,
+      "unit": "levels"
+    },
+    "maxFiles": {
+      "title": "Maximum Files",
+      "type": "integer",
+      "description": "Maximum number of files to process",
+      "default": 1000,
+      "minimum": 1,
+      "maximum": 100000
+    },
+    "extractText": {
+      "title": "Extract Text",
+      "type": "boolean",
+      "description": "Whether to extract text from supported file types",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "directoryPatterns": {
+      "title": "Directory Patterns",
+      "type": "array",
+      "description": "Only process directories matching these patterns (e.g., '/bills/*')",
+      "default": [],
+      "editor": "stringList"
+    },
+    "excludeDirectoryPatterns": {
+      "title": "Exclude Directory Patterns",
+      "type": "array",
+      "description": "Skip directories matching these patterns",
+      "default": [],
+      "editor": "stringList"
+    },
+    "filePatterns": {
+      "title": "File Patterns",
+      "type": "array",
+      "description": "Only process files matching these patterns",
+      "default": [],
+      "editor": "stringList"
+    },
+    "excludeFilePatterns": {
+      "title": "Exclude File Patterns",
+      "type": "array",
+      "description": "Skip files matching these patterns",
+      "default": [],
+      "editor": "stringList"
+    },
+    "proxyConfiguration": {
+      "title": "Proxy Configuration",
+      "type": "object",
+      "description": "Proxy settings for the actor",
+      "default": {},
+      "prefill": { "useApifyProxy": true },
+      "editor": "proxy"
+    }
+  },
+  "required": ["ftpServer"]
+}

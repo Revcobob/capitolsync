@@ -1,0 +1,17 @@
+FROM apify/actor-node:18
+
+# Copy all files from the directory where Dockerfile is located to the Docker image
+COPY . ./
+
+# Install NPM packages, skip the optional dependencies
+RUN npm --quiet set progress=false \
+ && npm install --only=prod --no-optional \
+ && echo "Installed NPM packages:" \
+ && (npm list || true) \
+ && echo "Node.js version:" \
+ && node --version \
+ && echo "NPM version:" \
+ && npm --version
+
+# Specify how to run the actor
+CMD npm start

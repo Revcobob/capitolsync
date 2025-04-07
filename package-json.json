@@ -1,0 +1,17 @@
+{
+  "name": "texas-legislative-ftp-scraper",
+  "version": "1.0.0",
+  "description": "Apify actor for scraping legislative data from Texas FTP server",
+  "type": "module",
+  "dependencies": {
+    "apify": "^3.1.4",
+    "basic-ftp": "^5.0.3",
+    "cheerio": "^1.0.0-rc.12",
+    "iconv-lite": "^0.6.3"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
