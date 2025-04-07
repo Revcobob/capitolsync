@@ -2,8 +2,8 @@
 
 const runActor = async () => {
     // Replace these with your actual values
-    const APIFY_TOKEN = 'apify_api_Cr6Ja2bkaQNQRU8cfwB7xys0VyD5gC2zeUdL';
-    const ACTOR_ID = 'revcobob/capitolsync'; // This will be assigned once you create the actor
+    const APIFY_TOKEN = 'your_apify_token';
+    const ACTOR_ID = 'your_actor_id'; // This will be assigned once you create the actor
 
     // Prepare the actor input
     const input = {
@@ -16,7 +16,7 @@ const runActor = async () => {
         "maxFiles": 5000,
         "extractText": true,
         "directoryPatterns": [
-            "/bills/89R/billtext/*"
+            "/bills/87R/billtext/*"
         ],
         "filePatterns": [
             "HB.*", 
